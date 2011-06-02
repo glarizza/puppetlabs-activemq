@@ -13,7 +13,7 @@
 class activemq::packages (
   $version,
   $home = '/usr/share/activemq'
-) {
+) inherits activemq::params {
 
   validate_re($version, '^[._0-9a-zA-Z:-]+$')
   validate_re($home, '^/')
@@ -45,6 +45,7 @@ class activemq::packages (
   }
 
   package { 'activemq':
+    name    => $activemq::params::amq_pkg_name,
     ensure  => $version_real,
     notify  => Service['activemq'],
   }

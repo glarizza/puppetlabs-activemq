@@ -24,12 +24,9 @@ class mcollective::params {
   $amq_group                  = 'activemq'
   $amq_uid                    = '92'
   $amq_gid                    = '92'
-  
+
   $amq_version = $operatingsystem ? {
-    /(?i-mx:ubuntu|debian)/   => latest,
-	  /(?i-mx:rhel|centos)/ 	  => '5.5.0-2.el5',
-	  /(?i-mx:darwin)/          => '5.5.0-2',
-    default                   => undef,
+    default                   => 'present',
   }
 
   $amq_init_configfile = $operatingsystem ? {
@@ -60,3 +57,4 @@ class mcollective::params {
   }
   
 }
+

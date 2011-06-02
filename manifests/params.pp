@@ -19,7 +19,7 @@ class mcollective::params {
   $stomp_port                 = '61613'
   $stomp_admin_user           = 'admin'
   $stomp_admin_passwd         = 'admin'
-  
+
   $amq_user                   = 'activemq'
   $amq_group                  = 'activemq'
   $amq_uid                    = '92'
@@ -55,6 +55,6 @@ class mcollective::params {
     /(?i-mx:darwin)/            => 'activemq-5.5.0-2.dmg',
     default                     => 'activemq'
   }
-  
+
 }
 

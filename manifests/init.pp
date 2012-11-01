@@ -28,6 +28,7 @@ class activemq(
   $version       = 'present',
   $ensure        = 'running',
   $webconsole    = true,
+  $stomp_port    = '61613',
   $server_config = 'UNSET'
 ) {
 
